@@ -11,21 +11,23 @@
     android:background="#5f5f5f"
     tools:context="ws.crandell.flipomatic.MainActivity">
 
-    <ImageView
+    <ImageButton
         android:id="@+id/imgbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:src="@drawable/ic_clickhere" />
+        android:src="@drawable/ic_clickhere"
+        android:contentDescription="@string/imgbtndisc" />
 
     <ImageView
         android:id="@+id/imgshow"
         android:scaleType="fitCenter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/imgbtn"
-        android:src="@android:color/transparent" />
+        android:layout_centerInParent="true"
+        android:src="@android:color/transparent"
+        android:contentDescription="@string/choicedisplay" />
 
 </RelativeLayout>

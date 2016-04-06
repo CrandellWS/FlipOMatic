@@ -4,8 +4,9 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 
 import java.util.Random;
 
@@ -32,32 +33,51 @@ public class MainActivity extends AppCompatActivity {
     private void flipShow() {
 //
         final ImageView imageshow = (ImageView) findViewById(R.id.imgshow);
-        final ImageView imageview = (ImageView) findViewById(R.id.imgbtn);
+        final ImageView imagebtn = (ImageView) findViewById(R.id.imgbtn);
         handler.removeCallbacksAndMessages(null);
         imageshow.setImageResource(0);
 
-        imageview.setOnClickListener(new View.OnClickListener() {
+        final Animation fade = new AlphaAnimation(1, 0);
+        //Do something after 100ms
+        fade.setStartOffset(1000);
+        fade.setDuration(1500);
+
+        fade.setAnimationListener(new Animation.AnimationListener() {
+
+            @Override
+            public void onAnimationStart(Animation animation) {
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+
+                imageshow.setImageResource(0);
+                animation.setFillAfter(true);
+            }
+        });
+
+
+        imagebtn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                if(getRandomBoolean()) {
+                v.clearAnimation();
+                imageshow.setImageResource(0);
+                if (getRandomBoolean()) {
                     imageshow.setImageResource(R.drawable.left);
                 } else {
                     imageshow.setImageResource(R.drawable.right);
                 }
 
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        //Do something after 100ms
-                        imageshow.setImageResource(0);
-                    }
-                }, 2500);
+                imageshow.startAnimation(fade);
             }
         });
     }
-
 
 }
 
