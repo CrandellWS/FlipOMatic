@@ -1,8 +1,14 @@
 # FlipOMatic
+#### Get this app on 
+  - The Play Store at: 
+    - https://play.google.com/store/apps/details?id=ws.crandell.flipomatic
+  - Amazon 
+    - http://www.amazon.com/gp/product/B01DVW2MO0
 
 Stephen Colbert gave me the idea to make this app while watching The Late Show
 
-  - https://play.google.com/store/apps/details?id=ws.crandell.flipomatic
+#### Get the App on Amazon 
+  - http://www.amazon.com/gp/product/B01DVW2MO0
 
 ### TSA paid $1.4 million for Randomizer app that chooses left or right
 
