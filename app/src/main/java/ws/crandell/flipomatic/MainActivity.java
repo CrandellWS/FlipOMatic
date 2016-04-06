@@ -33,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
 //
         final ImageView imageshow = (ImageView) findViewById(R.id.imgshow);
         final ImageView imageview = (ImageView) findViewById(R.id.imgbtn);
+        handler.removeCallbacksAndMessages(null);
+        imageshow.setImageResource(0);
+
         imageview.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -50,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                         //Do something after 100ms
                         imageshow.setImageResource(0);
                     }
-                }, 1500);
+                }, 2500);
             }
         });
     }
